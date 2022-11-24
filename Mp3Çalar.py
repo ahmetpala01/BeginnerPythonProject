@@ -98,16 +98,25 @@ class Mp3Calar():
     def ıslemSec(self):    
         
         with open("Sarkılar.txt","r") as file:
-            music_list = file.readlines()
+            sarki_listesi = music_list = file.readlines()
             if len(music_list) == 0:
                 sarki_listesi = "Boş"
             else:
                 sarki_listesi = music_list
+                    
+                    
+
+        
 
 
         while True:
             print(""""
-            Şarkı listesi : {}
+            Şarkı Listesi :
+            """,end="")
+            for music in sarki_listesi:
+                print("""
+                {}""".format(music),end="")
+            print(""""
             Şuan Çalan Şarkı : {}
             Ses : {}
 
@@ -119,7 +128,7 @@ class Mp3Calar():
             6-Şarkı sil
             7-Kapat
             \n
-            """.format(sarki_listesi,calan_sarki,ses))
+            """.format(calan_sarki,ses))
             girilen_deger = int(input("Bir değer giriniz :"))
             while True:
                 if girilen_deger >= 1 and girilen_deger <= 7:
