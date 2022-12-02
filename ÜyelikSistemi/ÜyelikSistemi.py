@@ -26,7 +26,7 @@ class ÜyelikSistemi():
         try:
             with open("Üyeler.json","r") as file:
                 veriler = json.load(file)
-                for kullanici in veriler["Kullanici"]:
+                for kullanici in veriler["Kullanicilar"]:
                     if kullanici["Kullanici_adi"] == k_adı and kullanici["Sifre"] == sifre and kullanici["E-mail"] == email:
                         print("Bu hesap daha önce oluşturulmuştur")
         except FileNotFoundError:
